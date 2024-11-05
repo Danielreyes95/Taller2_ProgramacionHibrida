@@ -1,0 +1,11 @@
+<ion-list>
+  <ion-item *ngFor="let c of citas">
+    <ion-label>
+      <h2>{{c.mensaje}}</h2>
+      <p>{{c.autor}}</p>
+    </ion-label>
+    <ion-button fill="clear" slot="end" (click)="deleteCita(c)">
+      <ion-icon slot="icon-only" icon="trash-outline"></ion-icon>">
+    </ion-button>
+  </ion-item>
+</ion-list>

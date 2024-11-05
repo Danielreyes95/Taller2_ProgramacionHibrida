@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Home</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/configuracion">
+        <ion-icon icon="settings-Outline"></ion-icon>
+      </ion-button>
+      <ion-button routerLink="/gestion">
+        <ion-icon icon="add-Circle" color="primary"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card *ngIf="citaAleatoria">
+    <ion-card-header>
+      <ion-card-title>{{ citaAleatoria.mensaje }}</ion-card-title>
+      <ion-card-subtitle>{{ citaAleatoria.autor }}</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+  <ion-card *ngIf="!citaAleatoria">
+    <ion-card-header>
+      <ion-card-title>No hay citas disponibles</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+</ion-content>

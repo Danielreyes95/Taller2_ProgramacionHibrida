@@ -1,0 +1,22 @@
+
+<ion-item>
+  <ion-label position="floating">Cita</ion-label>
+  <ion-input [formControl]="mensaje" type="text"></ion-input>
+</ion-item>
+<ion-text color="danger" *ngIf="mensaje.invalid && (mensaje.dirty || mensaje.touched)">
+  <p *ngIf="mensaje.errors?.['required']">La cita es obligatoria.</p>
+  <p *ngIf="mensaje.errors?.['minlength']">La cita debe tener al menos 5 caracteres.</p>
+</ion-text>
+
+<ion-item>
+  <ion-label position="floating">Autor</ion-label>
+  <ion-input [formControl]="autor" type="text"></ion-input>
+</ion-item>
+<ion-text color="danger" *ngIf="autor.invalid && (autor.dirty || autor.touched)">
+  <p *ngIf="autor.errors?.['required']">El autor es obligatorio.</p>
+  <p *ngIf="autor.errors?.['minlength']">El autor debe tener al menos 2 caracteres.</p>
+</ion-text>
+
+<ion-button (click)="createCita()" [disabled]="citaForm.invalid">Agregar</ion-button>
+
+
